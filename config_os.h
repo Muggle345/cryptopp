@@ -29,7 +29,7 @@
 // https://www.cryptopp.com/wiki/Release_Process#Self_Tests
 // The problems with Clang pretending to be other compilers is
 // discussed at http://github.com/weidai11/cryptopp/issues/147.
-#if (defined(_MSC_VER) && defined(__clang__))
+#if (defined(_MSC_VER) && _MSC_VER < 1930 && defined(__clang__))
 # error: "Unsupported configuration"
 #endif
 
@@ -166,3 +166,4 @@
 #endif	// NO_OS_DEPENDENCE
 
 #endif  // CRYPTOPP_CONFIG_OS_H
+
