@@ -91,7 +91,7 @@
 	#endif
 #endif
 
-#if defined(_MSC_VER) && defined(_M_X64)
+#if defined(_MSC_VER) && defined(_M_X64) && !defined(__clang__)
 	#define CRYPTOPP_X64_MASM_AVAILABLE 1
 #endif
 
@@ -490,3 +490,4 @@
 #endif   // CRYPTOPP_DISABLE_ANDROID_ADVANCED_ISA
 
 #endif  // CRYPTOPP_CONFIG_ASM_H
+
